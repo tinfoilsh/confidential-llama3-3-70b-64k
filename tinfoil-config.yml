@@ -1,16 +1,19 @@
-cvm-version: 0.0.19
+cvm-version: 0.0.20
 ovmf-version: 0.0.2
 cpus: 8
 memory: 32768
 
 models:
-  - id: llama3.3:70b64k
-    mpk: c01c6666822888ea22f736d5ccd9baf2a7585fb99801b2061ea5802eea515ab0-42520420352
+  - name: "llama3.3-70b-64k"
+    repo: "casperhansen/llama-3.3-70b-instruct-awq"
+    mpk: "a5682a25b389ffec1f815014f32db5e8408ede5f9858b4892e60f70e04072499_39785426944_105c64df-38c7-599e-8e98-71699d45be86"
+vllm-args: --quantization awq --max-model-len 65536
 
 shim:
   domains:
     - llama3-3-70b-64k.model.tinfoil.sh
   listen-port: 443
-  upstream-port: 11434
+  upstream-port: 8080
   paths:
     - /v1/chat/completions
+    - /metrics

@@ -5,9 +5,9 @@ memory: 32768
 
 models:
   - name: "llama3.3-70b-64k"
-    repo: "casperhansen/llama-3.3-70b-instruct-awq@64d255621f40b42adaf6d1f32a47e1d4534c0f14"
-    mpk: "a5682a25b389ffec1f815014f32db5e8408ede5f9858b4892e60f70e04072499_39785426944_105c64df-38c7-599e-8e98-71699d45be86"
-vllm-args: --quantization awq --max-model-len 65536
+    repo: "lambdalabs/Llama-3.3-70B-Instruct-AWQ-4bit@a70257cf10f368114a66115c315def76a1227e26"
+    mpk: "06002d4871dbd882fc8b4c385e5181fdd85615e514f4efca3b6b3a3a774a36d2_39785426944_58b5d994-b471-58c9-8058-d224be115e1a"
+vllm-args: --quantization awq_marlin --max-model-len 65536
 
 shim:
   domains:
